@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.979eab02.css",
+    "main.js": "/static/js/main.b35235b3.js",
+    "static/js/488.6594975c.chunk.js": "/static/js/488.6594975c.chunk.js",
+    "static/media/background-1.jpg": "/static/media/background-1.922d79d6ae510820674c.jpg",
+    "static/media/profile pic 2.gif": "/static/media/profile pic 2.0be1770c0a023309bca9.gif",
+    "static/media/Project---Wacky-Tales-Weaver.png": "/static/media/Project---Wacky-Tales-Weaver.c52ed251c7141fae3f59.png",
+    "static/media/Certificate of Completion - Full Stack Development.png": "/static/media/Certificate of Completion - Full Stack Development.1f0893dc1fe74a8ec86c.png",
+    "static/media/project-5.png": "/static/media/project-5.58424dfde192f3af1561.png",
+    "static/media/profile pic.png": "/static/media/profile pic.738435e2a997dfc3a045.png",
+    "static/media/UOM-Degree.png": "/static/media/UOM-Degree.48f4db630d04e0c84d68.png",
+    "static/media/CV-Sameera Wagaarachchige FD.pdf": "/static/media/CV-Sameera Wagaarachchige FD.ebaf4fb7e4b5ce1edc1a.pdf",
+    "static/media/GameProject.png": "/static/media/GameProject.e5be6547ae94cecd6638.png",
+    "static/media/project-4.png": "/static/media/project-4.035ad16214db1d4cf79b.png",
+    "static/media/Python-1.png": "/static/media/Python-1.f26c027ecaae104b694e.png",
+    "static/media/Weather-Dashboard-Application.png": "/static/media/Weather-Dashboard-Application.550ca7b81ba8bb438562.png",
+    "static/media/MBA.png": "/static/media/MBA.2e3509259786b98881f8.png",
+    "static/media/React.png": "/static/media/React.4a97d1e3a02c3bb981b2.png",
+    "static/media/node-js.png": "/static/media/node-js.9fea1c7da2bd42ab93bf.png",
+    "static/media/project-6.png": "/static/media/project-6.8a0e51330f7c3637bddb.png",
+    "static/media/SCSS.png": "/static/media/SCSS.9de940c2f3ec6f1e5050.png",
+    "static/media/CSS.png": "/static/media/CSS.d1a3c1e59ca82dbdf815.png",
+    "static/media/HTML.png": "/static/media/HTML.6e930594286d8afe4c79.png",
+    "static/media/Js.png": "/static/media/Js.3dfb665e058d08c99f28.png",
+    "static/media/express-js.webp": "/static/media/express-js.b1ea2a56a1684a950424.webp",
+    "static/media/github.svg": "/static/media/github.c8884475ec13c690163b70d91c494f8c.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.38251726288739c35089bcc318da1b1d.svg",
+    "static/media/mongodb.svg": "/static/media/mongodb.bfa6cdd80f4a99232cadb39ebbb976d2.svg",
+    "index.html": "/index.html",
+    "main.979eab02.css.map": "/static/css/main.979eab02.css.map",
+    "main.b35235b3.js.map": "/static/js/main.b35235b3.js.map",
+    "488.6594975c.chunk.js.map": "/static/js/488.6594975c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.979eab02.css",
+    "static/js/main.b35235b3.js"
+  ]
+}
