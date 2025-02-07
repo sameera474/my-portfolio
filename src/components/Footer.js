@@ -12,7 +12,7 @@ export default function Footer() {
       }}
     >
       <Typography variant="body2">
-        © 2024 Sameera Wagaarachchige | All Rights Reserved
+        © 2025 Sameera Wagaarachchige | All Rights Reserved
       </Typography>
     </Box>
   );
