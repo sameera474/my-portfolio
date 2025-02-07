@@ -144,6 +144,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const navLinks = [
     { text: "Home", href: "#home" },
     { text: "About", href: "#about" },
+    { text: "Experience", href: "#experience" }, // Added Experience link
     { text: "Projects", href: "#projects" },
     { text: "Contact", href: "#contact" },
   ];

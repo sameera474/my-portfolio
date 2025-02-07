@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience"; // Added Experience Component
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import backgroundImage from "./assets/images/background-1.jpg"; // Import background image
@@ -39,11 +40,13 @@ export default function App() {
         sx={{
           minHeight: "100vh",
           backgroundImage: `url(${backgroundImage})`, // Background image remains
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: "cover", // Ensures full coverage without distortion
+          backgroundPosition: "top center", // Positions image properly
           backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed", // Keeps the background fixed on scroll
           transition: "all 0.5s ease-in-out", // Smooth theme transition
-          bgcolor: theme.palette.background.default, // Changes on theme switch
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -53,6 +56,9 @@ export default function App() {
           </div>
           <div id="about">
             <About />
+          </div>
+          <div id="experience">
+            <Experience />
           </div>
           <div id="projects">
             <Projects />

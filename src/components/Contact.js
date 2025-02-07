@@ -19,7 +19,17 @@ export default function Contact() {
           transition: "all 0.3s ease-in-out", // Smooth effect
         }}
       >
-        <Typography variant="h4" gutterBottom sx={{ color: "white" }}>
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          sx={{
+            color: "white",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: 2,
+          }}
+        >
           Contact Me
         </Typography>
 

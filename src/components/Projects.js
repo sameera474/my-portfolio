@@ -67,11 +67,17 @@ const projects = [
 export default function Projects() {
   return (
     <Box sx={{ p: 5 }}>
+      {/* About Me Title */}
       <Typography
         variant="h4"
         align="center"
         gutterBottom
-        sx={{ color: "white" }}
+        sx={{
+          color: "white",
+          fontWeight: "bold",
+          textTransform: "uppercase",
+          letterSpacing: 2,
+        }}
       >
         Projects
       </Typography>
