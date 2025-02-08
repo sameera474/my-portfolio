@@ -21,7 +21,7 @@ export default function Home({ darkMode }) {
         justifyContent: "center",
         px: { xs: 2, sm: 4, md: 8 },
         textAlign: "center",
-        pt: { xs: 6, sm: 7, md: 8, lg: 10 }, // ✅ Reduced top padding to bring it closer to navbar
+        // pt: { xs: 6, sm: 7, md: 8, lg: 10 }, // ✅ Reduced top padding to bring it closer to navbar
         transition: "all 0.5s ease-in-out",
       }}
     >
@@ -45,8 +45,8 @@ export default function Home({ darkMode }) {
           <Avatar
             src={profilePic}
             sx={{
-              width: { xs: 140, sm: 180, md: 220, lg: 260 }, // ✅ Optimized size
-              height: { xs: 140, sm: 180, md: 220, lg: 260 },
+              width: { xs: 250, sm: 280, md: 310, lg: 350 }, // ✅ Optimized size
+              height: { xs: 250, sm: 280, md: 310, lg: 350 },
               mx: "auto",
               mt: { xs: 0, sm: 1, md: 0 }, // ✅ Slight margin to balance layout
               boxShadow: darkMode
