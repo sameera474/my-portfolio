@@ -57,6 +57,7 @@ export default function Experience() {
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: 2,
+          color: "text.primary",
         }}
       >
         Experience

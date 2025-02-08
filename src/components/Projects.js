@@ -77,6 +77,7 @@ export default function Projects() {
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: 2,
+          color: "text.primary",
         }}
       >
         Projects
@@ -105,16 +106,17 @@ export default function Projects() {
                     variant="outlined"
                     href={project.github}
                     target="_blank"
-                    sx={{
-                      color: "white",
-                      borderColor: "rgba(255, 255, 255, 0.5)",
+                    sx={(theme) => ({
+                      color: theme.palette.text.primary, // Dynamic text color (white in dark mode, black in light mode)
+                      borderColor: theme.palette.primary.main, // Dynamic border color
                       "&:hover": {
-                        backgroundColor: "rgba(255, 255, 255, 0.2)",
+                        backgroundColor: theme.palette.action.hover, // Adjust hover effect dynamically
                       },
-                    }}
+                    })}
                   >
                     GitHub
                   </Button>
+
                   {project.live !== "#" && (
                     <Button
                       size="small"

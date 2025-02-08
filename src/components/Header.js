@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Button,
   IconButton,
   Box,
   Drawer,
@@ -11,9 +10,12 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../assets/Logo/logo-white.png";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+
+// Import both logos
+import logoWhite from "../assets/Logo/logo-white.png"; // White logo for dark mode
+import logoDark from "../assets/Logo/logo-dark.png"; // Dark logo for light mode
 
 export default function Header({ darkMode, setDarkMode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -31,7 +33,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const navLinks = [
     { text: "Home", href: "#home" },
     { text: "About", href: "#about" },
-    { text: "Experience", href: "#experience" }, // ✅ Added Experience Section
+    { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "Contact", href: "#contact" },
   ];
@@ -41,10 +43,13 @@ export default function Header({ darkMode, setDarkMode }) {
       position="fixed"
       sx={{
         backgroundColor: darkMode
-          ? "rgba(20, 20, 20, 0.8)"
-          : "rgba(14, 13, 39, 0.541)",
+          ? "rgba(20, 20, 20, 0.9)"
+          : "rgba(255, 255, 255, 0.9)",
+        color: darkMode ? "#ffffff" : "#000000",
         borderRadius: "40px",
-        boxShadow: "1px 0px 5px rgb(167, 2, 185)",
+        boxShadow: darkMode
+          ? "1px 0px 5px rgb(167, 2, 185)"
+          : "1px 0px 5px rgba(0, 0, 0, 0.2)",
         margin: "20px auto",
         maxWidth: "80%",
         height: "60px",
@@ -58,71 +63,57 @@ export default function Header({ darkMode, setDarkMode }) {
       }}
     >
       <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
+        sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
       >
-        {/* Left Side - Dark Mode Toggle */}
+        {/* Dark Mode Toggle */}
         <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
           {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
 
-        {/* Center - Logo */}
+        {/* Dynamic Logo */}
         <Box sx={{ flexGrow: 1, textAlign: "center" }}>
           <a href="#home">
             <img
-              src={logo}
+              src={darkMode ? logoWhite : logoDark}
               alt="SAMEERA"
               style={{
                 maxHeight: "50px",
                 maxWidth: "200px",
                 cursor: "pointer",
+                transition: "all 0.3s ease-in-out",
               }}
             />
           </a>
         </Box>
 
-        {/* Navigation Links (Desktop - Hidden Below 1170px) */}
-        <Box
-          sx={{
-            display: { xs: "none", md: "flex" },
-            gap: "60px",
-            "@media (max-width: 1170px)": {
-              display: "none",
-            },
-          }}
-        >
+        {/* Navigation Links */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: "30px" }}>
           {navLinks.map((link, index) => (
-            <Button key={index} color="inherit" href={link.href}>
+            <a
+              key={index}
+              href={link.href}
+              style={{
+                textDecoration: "none",
+                color: darkMode ? "white" : "black",
+              }}
+            >
               {link.text}
-            </Button>
+            </a>
           ))}
         </Box>
 
-        {/* Drawer for Mobile Navigation (Visible Below 1170px) */}
+        {/* Mobile Navigation Drawer */}
         <IconButton
           edge="start"
           color="inherit"
-          sx={{
-            display: { xs: "block", md: "none" },
-            "@media (max-width: 1170px)": {
-              display: "block",
-            },
-          }}
+          sx={{ display: { xs: "block", md: "none" } }}
           onClick={toggleDrawer(true)}
         >
           <MenuIcon />
         </IconButton>
 
         <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-          <Box
-            sx={{ width: 250 }}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-          >
+          <Box sx={{ width: 250 }}>
             <List>
               {navLinks.map((link, index) => (
                 <ListItem button key={index} component="a" href={link.href}>

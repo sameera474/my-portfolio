@@ -40,7 +40,7 @@ export default function About() {
         align="center"
         gutterBottom
         sx={{
-          color: "white",
+          color: "text.primary", // Apply theme-based text color
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: 2,

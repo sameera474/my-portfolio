@@ -5,15 +5,16 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Experience from "./components/Experience"; // Added Experience Component
+import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import backgroundImage from "./assets/images/background-1.jpg"; // Import background image
+import darkBackgroundImage from "./assets/images/background-1.jpg"; // Dark mode background
+import lightBackgroundImage from "./assets/images/background-2.jpg"; // Light mode background
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Create a theme that switches dynamically
+  // Create a dynamic theme
   const theme = useMemo(
     () =>
       createTheme({
@@ -22,11 +23,17 @@ export default function App() {
           primary: { main: darkMode ? "#ffffff" : "#0E0D27" },
           secondary: { main: "#FE04B3" },
           background: {
-            default: darkMode ? "#121212" : "#ffffff", // Main background
-            paper: darkMode ? "#1E1E1E" : "#f5f5f5", // Section background
+            default: darkMode ? "#121212" : "#ffffff",
+            paper: darkMode ? "#1E1E1E" : "#f5f5f5",
           },
           text: {
-            primary: darkMode ? "#ffffff" : "#000000", // Ensure text is visible
+            primary: darkMode ? "#ffffff" : "#000000", // White text in dark mode, black in light mode
+            secondary: darkMode ? "#b0b0b0" : "#555555",
+          },
+        },
+        typography: {
+          allVariants: {
+            color: darkMode ? "#ffffff" : "#000000",
           },
         },
       }),
@@ -39,34 +46,47 @@ export default function App() {
       <Box
         sx={{
           minHeight: "100vh",
-          backgroundImage: `url(${backgroundImage})`, // Background image remains
-          backgroundSize: "cover", // Ensures full coverage without distortion
-          backgroundPosition: "top center", // Positions image properly
+          scrollBehavior: "smooth",
+          backgroundImage: `url(${
+            darkMode ? darkBackgroundImage : lightBackgroundImage
+          })`,
+          backgroundSize: "cover",
+          backgroundPosition: "top center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed", // Keeps the background fixed on scroll
-          transition: "all 0.5s ease-in-out", // Smooth theme transition
+          backgroundAttachment: "fixed",
+          transition: "all 0.5s ease-in-out",
           display: "flex",
           flexDirection: "column",
         }}
       >
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Box sx={{ color: theme.palette.text.primary, p: 3 }}>
-          <div id="home">
-            <Home />
-          </div>
-          <div id="about">
+        <Box sx={{ p: 3 }}>
+          {/* Home Section */}
+          <Box id="home" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
+            <Home darkMode={darkMode} />
+          </Box>
+
+          {/* About Section */}
+          <Box id="about" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
             <About />
-          </div>
-          <div id="experience">
+          </Box>
+
+          {/* Experience Section */}
+          <Box id="experience" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
             <Experience />
-          </div>
-          <div id="projects">
+          </Box>
+
+          {/* Projects Section */}
+          <Box id="projects" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
             <Projects />
-          </div>
-          <div id="contact">
+          </Box>
+
+          {/* Contact Section */}
+          <Box id="contact" sx={{ py: { xs: 6, sm: 8, md: 10 } }}>
             <Contact />
-          </div>
+          </Box>
         </Box>
+
         <Footer />
       </Box>
     </ThemeProvider>

@@ -1,11 +1,16 @@
 import React from "react";
 import { Box, Typography, Button, Avatar, Grid } from "@mui/material";
 import profilePic from "../assets/images/profile-pic.png"; // Profile Image
-import linkedInIcon from "../assets/icons/linkedin.svg"; // LinkedIn Icon
-import githubIcon from "../assets/icons/github.svg"; // GitHub Icon
+
+// Import both versions of the icons
+import linkedInLight from "../assets/icons/linkedin-light.svg"; // White LinkedIn for dark mode
+import linkedInDark from "../assets/icons/linkedin-dark.svg"; // Dark LinkedIn for light mode
+import githubLight from "../assets/icons/github-light.svg"; // White GitHub for dark mode
+import githubDark from "../assets/icons/github-dark.svg"; // Dark GitHub for light mode
+
 import cvFile from "../assets/CV/CV-Sameera-Wagaarachchige-FD.pdf"; // CV File
 
-export default function Home() {
+export default function Home({ darkMode }) {
   return (
     <Box
       id="home"
@@ -14,24 +19,45 @@ export default function Home() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        px: { xs: 2, sm: 5, md: 12 },
-        textAlign: { xs: "center", md: "left" },
-        color: "white",
+        px: { xs: 2, sm: 4, md: 8 },
+        textAlign: "center",
+        pt: { xs: 6, sm: 7, md: 8, lg: 10 }, // ✅ Reduced top padding to bring it closer to navbar
+        transition: "all 0.5s ease-in-out",
       }}
     >
       <Grid
         container
-        spacing={{ xs: 2, md: 6 }}
+        spacing={4}
         alignItems="center"
         justifyContent="center"
-        direction={{ xs: "column", md: "row" }} // Vertical on mobile, horizontal on desktop
         sx={{
-          maxWidth: "1300px",
+          maxWidth: "1200px",
           transition: "all 0.5s ease-in-out",
+          flexDirection: { xs: "column", md: "row" }, // ✅ Switches to vertical on small screens
+          "@media (max-width: 1270px)": {
+            flexDirection: "column",
+            pt: "40px", // ✅ Reduced further at 1270px
+          },
         }}
       >
-        {/* Left Side - Introduction & Social Media */}
-        <Grid item xs={12} md={4} textAlign={{ xs: "center", md: "right" }}>
+        {/* Profile Picture Section */}
+        <Grid item xs={12} md={4} textAlign="center">
+          <Avatar
+            src={profilePic}
+            sx={{
+              width: { xs: 140, sm: 180, md: 220, lg: 260 }, // ✅ Optimized size
+              height: { xs: 140, sm: 180, md: 220, lg: 260 },
+              mx: "auto",
+              mt: { xs: 0, sm: 1, md: 0 }, // ✅ Slight margin to balance layout
+              boxShadow: darkMode
+                ? "0px 0px 15px rgba(255,255,255,0.2)"
+                : "0px 0px 15px rgba(0,0,0,0.2)",
+            }}
+          />
+        </Grid>
+
+        {/* Introduction Section */}
+        <Grid item xs={12} md={6} textAlign="center">
           <Typography
             variant="h6"
             sx={{
@@ -39,8 +65,7 @@ export default function Home() {
               letterSpacing: 2,
               fontWeight: "bold",
               textTransform: "uppercase",
-              mt: { xs: 12, sm: 14, md: 0 },
-              fontSize: { xs: "16px", sm: "18px", md: "20px" },
+              fontSize: { xs: "14px", sm: "16px", md: "18px" },
             }}
           >
             Full-Stack Web Developer
@@ -49,7 +74,9 @@ export default function Home() {
             variant="h2"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "32px", sm: "40px", md: "48px" },
+              fontSize: { xs: "24px", sm: "30px", md: "40px" },
+              transition: "color 0.3s ease-in-out",
+              color: darkMode ? "white" : "black",
             }}
           >
             Sameera
@@ -59,7 +86,9 @@ export default function Home() {
             sx={{
               fontWeight: "bold",
               mb: 1,
-              fontSize: { xs: "32px", sm: "40px", md: "48px" },
+              fontSize: { xs: "24px", sm: "30px", md: "40px" },
+              transition: "color 0.3s ease-in-out",
+              color: darkMode ? "white" : "black",
             }}
           >
             Wagaarachchige
@@ -68,21 +97,23 @@ export default function Home() {
             variant="body1"
             sx={{
               mb: 2,
-              fontSize: { xs: "14px", sm: "16px", md: "18px" },
-              maxWidth: "400px",
-              mx: { xs: "auto", md: "unset" },
+              fontSize: { xs: "13px", sm: "15px", md: "17px" },
+              maxWidth: "500px",
+              mx: "auto",
+              transition: "color 0.3s ease-in-out",
+              color: darkMode ? "white" : "black",
             }}
           >
             I'm a <b>Full-Stack Web Developer</b> based in Finland, crafting
             digital solutions with passion and precision.
           </Typography>
 
-          {/* Social Media Links */}
+          {/* Social Media Links with Dynamic Icons */}
           <Box
             sx={{
               mt: 2,
               display: "flex",
-              justifyContent: { xs: "center", md: "flex-end" },
+              justifyContent: "center",
               gap: 2,
             }}
           >
@@ -91,49 +122,45 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={linkedInIcon} alt="LinkedIn" style={{ width: 35 }} />
+              <img
+                src={darkMode ? linkedInLight : linkedInDark}
+                alt="LinkedIn"
+                style={{ width: 28, transition: "all 0.3s ease-in-out" }}
+              />
             </a>
             <a
               href="https://github.com/sameera474"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={githubIcon} alt="GitHub" style={{ width: 35 }} />
+              <img
+                src={darkMode ? githubLight : githubDark}
+                alt="GitHub"
+                style={{ width: 28, transition: "all 0.3s ease-in-out" }}
+              />
             </a>
           </Box>
         </Grid>
 
-        {/* Middle Section - CV Download Button */}
-        <Grid item xs={12} md={3} textAlign="center">
+        {/* CV Download Button Section */}
+        <Grid item xs={12} textAlign="center">
           <Button
             variant="contained"
             color="secondary"
             href={cvFile}
             download="CV-Sameera-Wagaarachchige.pdf"
             sx={{
-              px: { xs: 4, md: 6 },
-              py: 1.8,
-              fontSize: { xs: "14px", md: "16px" },
+              px: { xs: 3, md: 5 },
+              py: 1.2,
+              fontSize: { xs: "13px", md: "15px" },
               fontWeight: "bold",
               borderRadius: "50px",
-              width: { xs: "100%", sm: "auto" },
+              width: { xs: "85%", sm: "auto" }, // ✅ Reduced width for small screens
+              transition: "all 0.3s ease-in-out",
             }}
           >
             Download CV
           </Button>
-        </Grid>
-
-        {/* Right Side - Profile Picture */}
-        <Grid item xs={12} md={4} textAlign="center">
-          <Avatar
-            src={profilePic}
-            sx={{
-              width: { xs: 300, sm: 325, md: 350 },
-              height: { xs: 300, sm: 325, md: 350 },
-              mx: "auto",
-              boxShadow: "0px 0px 15px rgba(255,255,255,0.2)",
-            }}
-          />
         </Grid>
       </Grid>
     </Box>

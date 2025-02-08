@@ -83,6 +83,7 @@ export default function Contact() {
             fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: 2,
+            color: "text.primary",
           }}
         >
           Contact Me
@@ -105,8 +106,9 @@ export default function Contact() {
             variant="outlined"
             required
             sx={{
-              bgcolor: "background.default",
-              input: { color: "text.primary" },
+              bgcolor: "background.paper", // Ensure proper contrast
+              input: { color: "text.primary" }, // Text input follows theme
+              label: { color: "text.primary" }, // Label follows theme
             }}
           />
 
@@ -121,8 +123,9 @@ export default function Contact() {
             variant="outlined"
             required
             sx={{
-              bgcolor: "background.default",
-              input: { color: "text.primary" },
+              bgcolor: "background.paper", // Ensure proper contrast
+              input: { color: "text.primary" }, // Text input follows theme
+              label: { color: "text.primary" }, // Label follows theme
             }}
           />
 
@@ -135,8 +138,9 @@ export default function Contact() {
             margin="normal"
             variant="outlined"
             sx={{
-              bgcolor: "background.default",
-              input: { color: "text.primary" },
+              bgcolor: "background.paper", // Ensure proper contrast
+              input: { color: "text.primary" }, // Text input follows theme
+              label: { color: "text.primary" }, // Label follows theme
             }}
           />
 
@@ -152,8 +156,9 @@ export default function Contact() {
             variant="outlined"
             required
             sx={{
-              bgcolor: "background.default",
-              input: { color: "text.primary" },
+              bgcolor: "background.paper", // Ensure proper contrast
+              input: { color: "text.primary" }, // Text input follows theme
+              label: { color: "text.primary" }, // Label follows theme
             }}
           />
 
