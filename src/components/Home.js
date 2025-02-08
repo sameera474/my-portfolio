@@ -167,3 +167,82 @@ export default function Home({ darkMode }) {
     </Box>
   );
 }
+// import React from "react";
+// import { Box, Typography, Avatar, Grid, Button } from "@mui/material";
+// import profilePic from "../assets/images/profile-pic.png";
+// import graphicProfilePic from "../assets/images/profile-pic.png";
+// import cvFullStack from "../assets/CV/CV-Sameera-Wagaarachchige-FD.pdf";
+// import cvGraphic from "../assets/CV/CV-Sameera-Wagaarachchige-FD.pdf";
+
+// export default function Home({ darkMode, profile }) {
+//   return (
+//     <Box
+//       sx={{
+//         minHeight: "80vh",
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         px: { xs: 2, sm: 4, md: 8 },
+//         textAlign: "center",
+//         transition: "all 0.5s ease-in-out",
+//       }}
+//     >
+//       <Grid
+//         container
+//         spacing={4}
+//         alignItems="center"
+//         justifyContent="center"
+//         sx={{
+//           maxWidth: "1200px",
+//           transition: "all 0.5s ease-in-out",
+//           flexDirection: { xs: "column", md: "row" },
+//         }}
+//       >
+//         <Grid item xs={12} md={4} textAlign="center">
+//           <Avatar
+//             src={profile === "fullstack" ? profilePic : graphicProfilePic}
+//             sx={{
+//               width: { xs: 250, sm: 280, md: 310, lg: 350 },
+//               height: { xs: 250, sm: 280, md: 310, lg: 350 },
+//               mx: "auto",
+//               boxShadow: darkMode
+//                 ? "0px 0px 15px rgba(255,255,255,0.2)"
+//                 : "0px 0px 15px rgba(0,0,0,0.2)",
+//             }}
+//           />
+//         </Grid>
+
+//         <Grid item xs={12} md={6} textAlign="center">
+//           <Typography variant="h6" color="secondary.main">
+//             {profile === "fullstack"
+//               ? "Full-Stack Web Developer"
+//               : "Graphic Designer"}
+//           </Typography>
+//           <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+//             Sameera Wagaarachchige
+//           </Typography>
+//           <Typography variant="body1" sx={{ mb: 2 }}>
+//             I'm a{" "}
+//             <b>
+//               {profile === "fullstack"
+//                 ? "Full-Stack Developer"
+//                 : "Graphic Designer"}
+//             </b>{" "}
+//             based in Finland, creating{" "}
+//             {profile === "fullstack" ? "web applications" : "digital arts"} with
+//             passion.
+//           </Typography>
+
+//           <Button
+//             variant="contained"
+//             color="secondary"
+//             href={profile === "fullstack" ? cvFullStack : cvGraphic}
+//             download
+//           >
+//             Download CV
+//           </Button>
+//         </Grid>
+//       </Grid>
+//     </Box>
+//   );
+// }
