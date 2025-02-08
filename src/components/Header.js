@@ -31,6 +31,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const navLinks = [
     { text: "Home", href: "#home" },
     { text: "About", href: "#about" },
+    { text: "Experience", href: "#experience" }, // ✅ Added Experience Section
     { text: "Projects", href: "#projects" },
     { text: "Contact", href: "#contact" },
   ];
@@ -89,7 +90,7 @@ export default function Header({ darkMode, setDarkMode }) {
             display: { xs: "none", md: "flex" },
             gap: "60px",
             "@media (max-width: 1170px)": {
-              display: "none", // Hide navbar below 1170px
+              display: "none",
             },
           }}
         >
@@ -107,7 +108,7 @@ export default function Header({ darkMode, setDarkMode }) {
           sx={{
             display: { xs: "block", md: "none" },
             "@media (max-width: 1170px)": {
-              display: "block", // Show hamburger menu below 1170px
+              display: "block",
             },
           }}
           onClick={toggleDrawer(true)}
