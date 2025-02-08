@@ -15,19 +15,20 @@ export default function Home({ darkMode }) {
     <Box
       id="home"
       sx={{
-        minHeight: "100vh",
+        minHeight: "90vh", // ✅ Reduced height to prevent extra bottom space
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         px: { xs: 2, sm: 4, md: 8 },
+        pt: { xs: 3, sm: 5, md: 6 }, // ✅ Reduced top padding
+        pb: { xs: 3, sm: 5, md: 6 }, // ✅ Reduced bottom padding
         textAlign: "center",
-        // pt: { xs: 6, sm: 7, md: 8, lg: 10 }, // ✅ Reduced top padding to bring it closer to navbar
         transition: "all 0.5s ease-in-out",
       }}
     >
       <Grid
         container
-        spacing={4}
+        spacing={3} // ✅ Reduced spacing between elements
         alignItems="center"
         justifyContent="center"
         sx={{
@@ -36,7 +37,7 @@ export default function Home({ darkMode }) {
           flexDirection: { xs: "column", md: "row" }, // ✅ Switches to vertical on small screens
           "@media (max-width: 1270px)": {
             flexDirection: "column",
-            pt: "40px", // ✅ Reduced further at 1270px
+            pt: "30px", // ✅ Reduced spacing further at 1270px
           },
         }}
       >
@@ -45,8 +46,8 @@ export default function Home({ darkMode }) {
           <Avatar
             src={profilePic}
             sx={{
-              width: { xs: 250, sm: 280, md: 310, lg: 350 }, // ✅ Optimized size
-              height: { xs: 250, sm: 280, md: 310, lg: 350 },
+              width: { xs: 200, sm: 250, md: 280, lg: 320 }, // ✅ Optimized size
+              height: { xs: 200, sm: 250, md: 280, lg: 320 },
               mx: "auto",
               mt: { xs: 0, sm: 1, md: 0 }, // ✅ Slight margin to balance layout
               boxShadow: darkMode
