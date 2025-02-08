@@ -97,7 +97,7 @@ export default function Projects() {
             >
               <CardMedia component="img" image={project.img} height="140" />
               <CardContent>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography variant="h6" sx={{ color: "text.primary" }}>
                   {project.title}
                 </Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
