@@ -82,17 +82,12 @@ export default function Experience() {
               backgroundColor: "rgba(255, 255, 255, 0.1)",
               borderRadius: "15px",
               border: "1px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
               textAlign: "left",
             }}
           >
             <Typography
               variant="h5"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                mb: 2,
-              }}
+              sx={{ display: "flex", alignItems: "center", mb: 2 }}
             >
               <CodeIcon sx={{ mr: 1, fontSize: 30, color: "secondary.main" }} />
               Frontend Development
@@ -101,11 +96,7 @@ export default function Experience() {
               {frontendSkills.map((skill, index) => (
                 <ListItem
                   key={index}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "nowrap",
-                  }}
+                  sx={{ display: "flex", justifyContent: "space-between" }}
                 >
                   <ListItemText primary={skill.name} />
                   {renderStars(skill.rating)}
@@ -125,17 +116,12 @@ export default function Experience() {
               backgroundColor: "rgba(255, 255, 255, 0.1)",
               borderRadius: "15px",
               border: "1px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
               textAlign: "left",
             }}
           >
             <Typography
               variant="h5"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                mb: 2,
-              }}
+              sx={{ display: "flex", alignItems: "center", mb: 2 }}
             >
               <StorageIcon
                 sx={{ mr: 1, fontSize: 30, color: "secondary.main" }}
@@ -146,11 +132,7 @@ export default function Experience() {
               {backendSkills.map((skill, index) => (
                 <ListItem
                   key={index}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "nowrap",
-                  }}
+                  sx={{ display: "flex", justifyContent: "space-between" }}
                 >
                   <ListItemText primary={skill.name} />
                   {renderStars(skill.rating)}
@@ -159,67 +141,96 @@ export default function Experience() {
             </List>
           </Paper>
         </Grid>
-
-        {/* Experience Section */}
-        <Box sx={{ mt: 5, textAlign: "center" }}>
-          <Paper
-            elevation={6}
-            sx={{
-              p: 4,
-              backdropFilter: "blur(10px)",
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "15px",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
-              textAlign: "center",
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mb: 2,
-              }}
-            >
-              <EmojiEventsIcon
-                sx={{ mr: 1, fontSize: 30, color: "secondary.main" }}
-              />
-              Experience
-            </Typography>
-            <Grid container spacing={3} justifyContent="center">
-              <Grid item xs={6} md={4}>
-                <Typography variant="h3">2</Typography>
-                <Typography>Years of Experience</Typography>
-              </Grid>
-              <Grid item xs={6} md={4}>
-                <Typography variant="h3">+20</Typography>
-                <Typography>Projects Completed</Typography>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Box>
       </Grid>
 
-      {/* ✅ Skills Section */}
+      {/* ✅ Experience Stats */}
       <Box sx={{ mt: 5, textAlign: "center" }}>
-        <Typography variant="h5" sx={{ color: "text.primary", mb: 2 }}>
+        <Paper
+          elevation={6}
+          sx={{
+            p: 4,
+            backdropFilter: "blur(10px)",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            borderRadius: "15px",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              mb: 2,
+            }}
+          >
+            <EmojiEventsIcon
+              sx={{ mr: 1, fontSize: 30, color: "secondary.main" }}
+            />
+            Experience
+          </Typography>
+          <Grid container spacing={3} justifyContent="center">
+            <Grid item xs={6} md={4}>
+              <Typography variant="h3">2</Typography>
+              <Typography>Years of Experience</Typography>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Typography variant="h3">+20</Typography>
+              <Typography>Projects Completed</Typography>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Box>
+
+      {/* ✅ Skills & Technologies Section - FIXED ALIGNMENT */}
+      <Box sx={{ mt: 5, textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          sx={{
+            color: "text.primary",
+            mb: 2,
+            fontWeight: "bold",
+            textTransform: "uppercase",
+          }}
+        >
           Skills & Technologies
         </Typography>
-        <Grid container spacing={2} justifyContent="center">
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          sx={{
+            maxWidth: "800px",
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+          }}
+        >
           {[
-            htmlIcon,
-            cssIcon,
-            jsIcon,
-            reactIcon,
-            nodeIcon,
-            scssIcon,
-            mongoIcon,
-            expressIcon,
-          ].map((icon, index) => (
-            <Grid item key={index} xs={3} sm={2} md={1}>
-              <img src={icon} alt="Skill Icon" style={{ width: "50px" }} />
+            { icon: htmlIcon, name: "HTML" },
+            { icon: cssIcon, name: "CSS" },
+            { icon: jsIcon, name: "JavaScript" },
+            { icon: reactIcon, name: "React.js" },
+            { icon: nodeIcon, name: "Node.js" },
+            { icon: scssIcon, name: "SCSS" },
+            { icon: mongoIcon, name: "MongoDB" },
+            { icon: expressIcon, name: "Express.js" },
+          ].map((item, index) => (
+            <Grid item key={index} xs={4} sm={3} md={2} lg={1.5}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src={item.icon}
+                  alt={item.name}
+                  style={{ width: "50px", height: "50px", marginBottom: "8px" }}
+                />
+                <Typography variant="body2">{item.name}</Typography>
+              </Box>
             </Grid>
           ))}
         </Grid>
