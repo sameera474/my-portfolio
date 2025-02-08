@@ -8,6 +8,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -35,7 +36,6 @@ export default function Header({ darkMode, setDarkMode }) {
     { text: "About", href: "#about" },
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
-    { text: "Contact", href: "#contact" },
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function Header({ darkMode, setDarkMode }) {
         </Box>
 
         {/* Navigation Links - Hidden on Mobile */}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: "30px" }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: "25px" }}>
           {navLinks.map((link, index) => (
             <a
               key={index}
@@ -108,11 +108,46 @@ export default function Header({ darkMode, setDarkMode }) {
               style={{
                 textDecoration: "none",
                 color: darkMode ? "white" : "black",
+                padding: "8px 15px",
+                borderRadius: "10px",
+                transition: "all 0.3s ease-in-out",
+                fontWeight: "bold",
+                fontSize: "16px",
               }}
+              onMouseEnter={(e) =>
+                (e.target.style.backgroundColor = darkMode
+                  ? "rgba(255, 255, 255, 0.2)"
+                  : "rgba(0, 0, 0, 0.1)")
+              }
+              onMouseLeave={(e) =>
+                (e.target.style.backgroundColor = "transparent")
+              }
             >
               {link.text}
             </a>
           ))}
+
+          {/* Contact Button (Styled like Download CV button) */}
+          <Button
+            variant="contained"
+            color="secondary"
+            href="#contact"
+            sx={{
+              px: 3,
+              py: 1,
+              fontSize: "14px",
+              fontWeight: "bold",
+              borderRadius: "50px",
+              textTransform: "none",
+              transition: "all 0.3s ease-in-out",
+              "&:hover": {
+                backgroundColor: darkMode ? "#FE54B8" : "#0E0D27",
+                color: "white",
+              },
+            }}
+          >
+            Contact
+          </Button>
         </Box>
 
         {/* Mobile Navigation Drawer */}
@@ -133,6 +168,10 @@ export default function Header({ darkMode, setDarkMode }) {
                   <ListItemText primary={link.text} />
                 </ListItem>
               ))}
+              {/* Contact Button in Mobile Menu */}
+              <ListItem button component="a" href="#contact">
+                <ListItemText primary="Contact" sx={{ fontWeight: "bold" }} />
+              </ListItem>
             </List>
           </Box>
         </Drawer>
