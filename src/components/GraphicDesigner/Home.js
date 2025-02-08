@@ -15,12 +15,12 @@ export default function Home({ darkMode, profile }) {
   return (
     <Box
       sx={{
-        minHeight: "90vh", // ✅ Reduced height to prevent extra bottom space
+        minHeight: "70vh", // ✅ Reduced height to prevent extra bottom space
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         px: { xs: 2, sm: 4, md: 8 },
-        pt: { xs: 3, sm: 5, md: 6 }, // ✅ Reduced top padding
+        pt: { xs: 0, sm: 0, md: 0 }, // ✅ Reduced top padding
         pb: { xs: 3, sm: 5, md: 6 }, // ✅ Reduced bottom padding
         textAlign: "center",
         transition: "all 0.5s ease-in-out",
