@@ -1,26 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
   Grid,
   Paper,
-  List,
-  ListItem,
-  ListItemText,
-  Button,
+  Modal,
+  Backdrop,
+  Fade,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
 
 // Import images
 import profilePic from "../assets/images/profile pic 2.gif";
-import htmlIcon from "../assets/icons/HTML.png";
-import cssIcon from "../assets/icons/CSS.png";
-import jsIcon from "../assets/icons/Js.png";
-import reactIcon from "../assets/icons/React.png";
-import nodeIcon from "../assets/icons/node-js.png";
-import scssIcon from "../assets/icons/SCSS.png";
-import mongoIcon from "../assets/icons/mongodb.svg";
-import expressIcon from "../assets/icons/express-js.webp";
 
 // Import certificates
 import certFullStack from "../assets/certificates/Certificate of Completion - Full Stack Development.png";
@@ -29,6 +22,21 @@ import certMBA from "../assets/certificates/MBA.png";
 import certBSc from "../assets/certificates/UOM-Degree.png";
 
 export default function About() {
+  // State for modal (popup)
+  const [open, setOpen] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
+
+  // Function to open modal
+  const handleOpen = (cert) => {
+    setSelectedCert(cert);
+    setOpen(true);
+  };
+
+  // Function to close modal
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box sx={{ p: 5 }}>
       {/* About Me Title */}
@@ -37,7 +45,7 @@ export default function About() {
         align="center"
         gutterBottom
         sx={{
-          color: "text.primary", // Apply theme-based text color
+          color: "text.primary",
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: 2,
@@ -69,7 +77,6 @@ export default function About() {
               backgroundColor: "rgba(255, 255, 255, 0.1)",
               borderRadius: "15px",
               border: "1px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
               textAlign: "left",
             }}
           >
@@ -82,17 +89,11 @@ export default function About() {
               />
               Education
             </Typography>
-            <List>
-              <ListItem>
-                <ListItemText primary="2024 - Full-Stack Development, JAMK University" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="2022 - MBA, University of Suffolk" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="2015 - BSc in Materials Science, University of Moratuwa" />
-              </ListItem>
-            </List>
+            <ul>
+              <li>2024 - Full-Stack Development, JAMK University</li>
+              <li>2022 - MBA, University of Suffolk</li>
+              <li>2015 - BSc in Materials Science, University of Moratuwa</li>
+            </ul>
           </Paper>
         </Grid>
       </Grid>
@@ -104,26 +105,10 @@ export default function About() {
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {[
-            {
-              title: "Full-Stack Development",
-              img: certFullStack,
-              file: "Certificate-FullStack.pdf",
-            },
-            {
-              title: "Python Program",
-              img: certPython,
-              file: "Certificate-Python.pdf",
-            },
-            {
-              title: "Master of Business Administration",
-              img: certMBA,
-              file: "Certificate-MBA.pdf",
-            },
-            {
-              title: "BSc in Materials Science & Engineering",
-              img: certBSc,
-              file: "Certificate-BSc.pdf",
-            },
+            { title: "Full-Stack Development", img: certFullStack },
+            { title: "Python Program", img: certPython },
+            { title: "Master of Business Administration", img: certMBA },
+            { title: "BSc in Materials Science & Engineering", img: certBSc },
           ].map((cert, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <Paper
@@ -134,9 +119,10 @@ export default function About() {
                   backgroundColor: "rgba(255, 255, 255, 0.1)",
                   borderRadius: "15px",
                   border: "1px solid rgba(255, 255, 255, 0.2)",
-                  color: "white",
                   textAlign: "center",
+                  cursor: "pointer",
                 }}
+                onClick={() => handleOpen(cert.img)} // Opens modal on click
               >
                 <Typography variant="h6">{cert.title}</Typography>
                 <img
@@ -146,22 +132,77 @@ export default function About() {
                     width: "100%",
                     borderRadius: "10px",
                     marginTop: "10px",
+                    transition: "transform 0.3s",
                   }}
                 />
-                <Button
-                  variant="outlined"
-                  color="secondary"
-                  sx={{ mt: 2 }}
-                  href={`/assets/certificates/${cert.file}`}
-                  download
-                >
-                  Download
-                </Button>
               </Paper>
             </Grid>
           ))}
         </Grid>
       </Box>
+
+      {/* Modal for Fullscreen Preview */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={open}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: { xs: "90%", md: "80%" },
+              maxHeight: "90vh", // Ensures it doesn't exceed screen size
+              overflow: "hidden",
+              bgcolor: "background.paper",
+              boxShadow: 24,
+              borderRadius: "10px",
+              textAlign: "center",
+              p: 2,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+            }}
+          >
+            {/* Close Button */}
+            <IconButton
+              onClick={handleClose}
+              sx={{
+                position: "absolute",
+                top: 10,
+                right: 10,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.8)",
+                },
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+
+            {/* Image Preview (scales correctly) */}
+            <img
+              src={selectedCert}
+              alt="Certificate Preview"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "85vh", // Adjusted to fit screen
+                objectFit: "contain",
+                userSelect: "none", // Prevents selection
+                pointerEvents: "none", // Prevents downloading via drag
+              }}
+            />
+          </Box>
+        </Fade>
+      </Modal>
     </Box>
   );
 }
