@@ -34,15 +34,19 @@ export default function Experience() {
     { name: "GitLab", rating: 5 },
   ];
 
-  // Function to render star ratings
+  // Function to render star ratings in a single row
   const renderStars = (rating) => {
-    return Array.from({ length: rating }, (_, i) => (
-      <StarIcon key={i} sx={{ color: "gold" }} />
-    ));
+    return (
+      <Box sx={{ display: "flex", flexWrap: "nowrap", gap: "2px" }}>
+        {Array.from({ length: rating }, (_, i) => (
+          <StarIcon key={i} sx={{ color: "gold", fontSize: "20px" }} />
+        ))}
+      </Box>
+    );
   };
 
   return (
-    <Box sx={{ p: 5 }}>
+    <Box sx={{ p: { xs: 3, md: 5 } }}>
       {/* Experience Title */}
       <Typography
         variant="h4"
@@ -60,11 +64,11 @@ export default function Experience() {
 
       <Grid container spacing={4} justifyContent="center">
         {/* Frontend Development Section */}
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} sm={10} md={5}>
           <Paper
             elevation={6}
             sx={{
-              p: 4,
+              p: { xs: 2, md: 4 },
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
               borderRadius: "15px",
@@ -84,10 +88,16 @@ export default function Experience() {
               {frontendSkills.map((skill, index) => (
                 <ListItem
                   key={index}
-                  sx={{ display: "flex", justifyContent: "space-between" }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 2,
+                    flexWrap: "nowrap",
+                  }}
                 >
                   <ListItemText primary={skill.name} />
-                  <Box>{renderStars(skill.rating)}</Box>
+                  {renderStars(skill.rating)}
                 </ListItem>
               ))}
             </List>
@@ -95,11 +105,11 @@ export default function Experience() {
         </Grid>
 
         {/* Backend Development Section */}
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} sm={10} md={5}>
           <Paper
             elevation={6}
             sx={{
-              p: 4,
+              p: { xs: 2, md: 4 },
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
               borderRadius: "15px",
@@ -121,10 +131,16 @@ export default function Experience() {
               {backendSkills.map((skill, index) => (
                 <ListItem
                   key={index}
-                  sx={{ display: "flex", justifyContent: "space-between" }}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 2,
+                    flexWrap: "nowrap",
+                  }}
                 >
                   <ListItemText primary={skill.name} />
-                  <Box>{renderStars(skill.rating)}</Box>
+                  {renderStars(skill.rating)}
                 </ListItem>
               ))}
             </List>
