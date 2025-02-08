@@ -102,7 +102,7 @@ export default function About() {
 
       {/* Certifications Section */}
       <Box sx={{ mt: 5, textAlign: "center" }}>
-        <Typography variant="h5" sx={{ color: "white", mb: 3 }}>
+        <Typography variant="h5" sx={{ color: "text.primary", mb: 3 }}>
           Certifications
         </Typography>
         <Grid container spacing={3} justifyContent="center">
@@ -168,7 +168,7 @@ export default function About() {
 
       {/* Skills Section */}
       <Box sx={{ mt: 5, textAlign: "center" }}>
-        <Typography variant="h5" sx={{ color: "white", mb: 2 }}>
+        <Typography variant="h5" sx={{ color: "text.primary", mb: 2 }}>
           Skills & Technologies
         </Typography>
         <Grid container spacing={2} justifyContent="center">
