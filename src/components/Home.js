@@ -24,7 +24,7 @@ export default function Home() {
         spacing={{ xs: 2, md: 6 }}
         alignItems="center"
         justifyContent="center"
-        direction={{ xs: "column", md: "row" }} // Changes from vertical to horizontal at 1177px
+        direction={{ xs: "column", md: "row" }} // Vertical on mobile, horizontal on desktop
         sx={{
           maxWidth: "1300px",
           transition: "all 0.5s ease-in-out",
@@ -43,7 +43,7 @@ export default function Home() {
               fontSize: { xs: "16px", sm: "18px", md: "20px" },
             }}
           >
-            Graphic Designer
+            Full-Stack Web Developer
           </Typography>
           <Typography
             variant="h2"
@@ -73,11 +73,11 @@ export default function Home() {
               mx: { xs: "auto", md: "unset" },
             }}
           >
-            I'm a <b>Graphic Designer</b> based in Finland, designing digital
-            arts with passion and precision.
+            I'm a <b>Full-Stack Web Developer</b> based in Finland, crafting
+            digital solutions with passion and precision.
           </Typography>
 
-          {/* Social Media Links - Properly aligned */}
+          {/* Social Media Links */}
           <Box
             sx={{
               mt: 2,
@@ -128,8 +128,8 @@ export default function Home() {
           <Avatar
             src={profilePic}
             sx={{
-              width: { xs: 180, sm: 220, md: 300 },
-              height: { xs: 180, sm: 220, md: 300 },
+              width: { xs: 300, sm: 325, md: 350 },
+              height: { xs: 300, sm: 325, md: 350 },
               mx: "auto",
               boxShadow: "0px 0px 15px rgba(255,255,255,0.2)",
             }}

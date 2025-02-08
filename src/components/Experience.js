@@ -34,19 +34,19 @@ export default function Experience() {
     { name: "GitLab", rating: 5 },
   ];
 
-  // Function to render star ratings in a single row
+  // Function to render star ratings (keeps them in one row)
   const renderStars = (rating) => {
     return (
-      <Box sx={{ display: "flex", flexWrap: "nowrap", gap: "2px" }}>
+      <Box sx={{ display: "flex", flexWrap: "nowrap", gap: 0.3 }}>
         {Array.from({ length: rating }, (_, i) => (
-          <StarIcon key={i} sx={{ color: "gold", fontSize: "20px" }} />
+          <StarIcon key={i} sx={{ color: "gold", fontSize: "18px" }} />
         ))}
       </Box>
     );
   };
 
   return (
-    <Box sx={{ p: { xs: 3, md: 5 } }}>
+    <Box sx={{ p: { xs: 2, md: 5 } }}>
       {/* Experience Title */}
       <Typography
         variant="h4"
@@ -64,11 +64,11 @@ export default function Experience() {
 
       <Grid container spacing={4} justifyContent="center">
         {/* Frontend Development Section */}
-        <Grid item xs={12} sm={10} md={5}>
+        <Grid item xs={12} sm={6} md={5}>
           <Paper
             elevation={6}
             sx={{
-              p: { xs: 2, md: 4 },
+              p: { xs: 3, md: 4 },
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
               borderRadius: "15px",
@@ -79,7 +79,11 @@ export default function Experience() {
           >
             <Typography
               variant="h5"
-              sx={{ display: "flex", alignItems: "center", mb: 2 }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mb: 2,
+              }}
             >
               <CodeIcon sx={{ mr: 1, fontSize: 30, color: "secondary.main" }} />
               Frontend Development
@@ -91,8 +95,6 @@ export default function Experience() {
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
-                    gap: 2,
                     flexWrap: "nowrap",
                   }}
                 >
@@ -105,11 +107,11 @@ export default function Experience() {
         </Grid>
 
         {/* Backend Development Section */}
-        <Grid item xs={12} sm={10} md={5}>
+        <Grid item xs={12} sm={6} md={5}>
           <Paper
             elevation={6}
             sx={{
-              p: { xs: 2, md: 4 },
+              p: { xs: 3, md: 4 },
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
               borderRadius: "15px",
@@ -120,7 +122,11 @@ export default function Experience() {
           >
             <Typography
               variant="h5"
-              sx={{ display: "flex", alignItems: "center", mb: 2 }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mb: 2,
+              }}
             >
               <StorageIcon
                 sx={{ mr: 1, fontSize: 30, color: "secondary.main" }}
@@ -134,8 +140,6 @@ export default function Experience() {
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center",
-                    gap: 2,
                     flexWrap: "nowrap",
                   }}
                 >
