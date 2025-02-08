@@ -21,7 +21,7 @@ export default function App() {
         palette: {
           mode: darkMode ? "dark" : "light",
           primary: { main: darkMode ? "#ffffff" : "#0E0D27" },
-          secondary: { main: "#FE04B3" },
+          secondary: { main: "#54B8FE" },
           background: {
             default: darkMode ? "#121212" : "#ffffff",
             paper: darkMode ? "#1E1E1E" : "#f5f5f5",
