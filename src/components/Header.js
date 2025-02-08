@@ -63,22 +63,35 @@ export default function Header({ darkMode, setDarkMode }) {
       }}
     >
       <Toolbar
-        sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+          alignItems: "center",
+          position: "relative",
+        }}
       >
-        {/* Dark Mode Toggle */}
+        {/* Dark Mode Toggle - Stays on the Left */}
         <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
           {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
 
-        {/* Dynamic Logo */}
-        <Box sx={{ flexGrow: 1, textAlign: "center" }}>
+        {/* Dynamic Logo - Moves to Center in Mobile */}
+        <Box
+          sx={{
+            position: "absolute",
+            left: { xs: "50%", md: "70px" }, // ✅ Moves to left in desktop, centers in mobile
+            transform: { xs: "translateX(-50%)", md: "none" }, // ✅ Centers properly on small screens
+            textAlign: "center",
+          }}
+        >
           <a href="#home">
             <img
               src={darkMode ? logoWhite : logoDark}
               alt="SAMEERA"
               style={{
-                maxHeight: "50px",
-                maxWidth: "200px",
+                maxHeight: "40px", // ✅ Reduced size slightly
+                maxWidth: "160px",
                 cursor: "pointer",
                 transition: "all 0.3s ease-in-out",
               }}
@@ -86,7 +99,7 @@ export default function Header({ darkMode, setDarkMode }) {
           </a>
         </Box>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - Hidden on Mobile */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: "30px" }}>
           {navLinks.map((link, index) => (
             <a
@@ -104,7 +117,7 @@ export default function Header({ darkMode, setDarkMode }) {
 
         {/* Mobile Navigation Drawer */}
         <IconButton
-          edge="start"
+          edge="end"
           color="inherit"
           sx={{ display: { xs: "block", md: "none" } }}
           onClick={toggleDrawer(true)}
