@@ -12,7 +12,7 @@ import darkBackgroundImage from "./assets/images/background-1.jpg"; // Dark mode
 import lightBackgroundImage from "./assets/images/background-2.jpg"; // Light mode background
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // ✅ Default set to dark mode
 
   // Create a dynamic theme
   const theme = useMemo(
