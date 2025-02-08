@@ -403,7 +403,7 @@ export default function Header({ darkMode, setDarkMode }) {
                     offset={-60}
                     style={{
                       textDecoration: "none",
-                      color: "black",
+                      color: darkMode ? "white" : "black",
                       width: "100%",
                       display: "block",
                       padding: "10px 20px",
