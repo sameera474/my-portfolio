@@ -152,11 +152,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9199900657054445"
-        crossorigin="anonymous"
-      ></script>
+
       <Box
         sx={{
           minHeight: "100vh",
