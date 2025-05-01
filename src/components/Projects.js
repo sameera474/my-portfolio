@@ -80,7 +80,7 @@ export default function Projects() {
         align="center"
         gutterBottom
         sx={{
-          color: "white",
+          // color: "white",
           fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: 2,
