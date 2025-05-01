@@ -17,6 +17,7 @@ import project4 from "../assets/images/project-4.png";
 import project5 from "../assets/images/project-5.png";
 import project6 from "../assets/images/project-6.png";
 import project7 from "../assets/images/project-7.png";
+import project8 from "../assets/images/project-8.png";
 
 const projects = [
   {
@@ -61,6 +62,12 @@ const projects = [
     img: project7,
     github: "https://github.com/sameera474/lawnmower-project-final.git",
     live: "https://lawnmower-project-final.vercel.app/",
+  },
+  {
+    title: "Car Rental Application",
+    img: project8,
+    github: "https://github.com/sameera474/Car-Rental-App---update-3.git",
+    live: "https://car-rental-app-update-31.vercel.app/",
   },
 ];
 
