@@ -18,44 +18,21 @@ import project5 from "../assets/images/project-5.png";
 import project6 from "../assets/images/project-6.png";
 import project7 from "../assets/images/project-7.png";
 import project8 from "../assets/images/project-8.png";
+import project8 from "../assets/images/project-9.png";
 
 const projects = [
   {
-    title: "Memory Game",
-    img: project1,
-    github: "https://github.com/sameera474/Game-Project.git",
-    live: "https://sameera474.github.io/Game-Project/",
-  },
-  {
-    title: "Wacky Tales Weaver",
-    img: project2,
-    github: "https://github.com/sameera474/Whacky-Story-Weaver.git",
-    live: "https://sameera474.github.io/Whacky-Story-Weaver/",
-  },
-  {
-    title: "Weather Dashboard Application",
-    img: project3,
-    github: "https://github.com/sameera474/Weather-Dashboard-Application",
-    live: "https://sameera474.github.io/Weather-Dashboard-Application/",
-  },
-  {
-    title: "Figma Mobile App (UI/UX Designs)",
-    img: project4,
+    title: "Figma Web Site UI Design",
+    img: project9,
     github:
-      "https://www.figma.com/design/LClhp5XqdZn9dHygwGVMIi/W-1-App-Updated?node-id=0-1&t=OCw1dKXHbCdVy9Ya-1",
-    live: "https://www.figma.com/proto/LClhp5XqdZn9dHygwGVMIi/W-1-App-Updated?node-id=1-3&p=f&t=AcLtfCD1czwC6OKJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3",
+      "https://www.figma.com/design/bjQHLyE2eo0xMcTJ2sZDUV/Flux---Figma-Build-Tutorial--Starter---Community---Copy-?node-id=1205-3&t=E1FvOrWhRN31h7e5-0",
+    live: "https://www.figma.com/proto/bjQHLyE2eo0xMcTJ2sZDUV/Flux---Figma-Build-Tutorial--Starter---Community---Copy-?node-id=1205-3&t=pcnZ13tPvtVUGmhD-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
   },
   {
-    title: "Student Portal for Tuition Class",
-    img: project5,
-    github: "https://github.com/sameera474/the_hub-add-php",
-    live: "#",
-  },
-  {
-    title: "E-commerce Project",
-    img: project6,
-    github: "https://github.com/sameera474/E-commerce-Web-Site",
-    live: "#",
+    title: "Car Rental Application",
+    img: project8,
+    github: "https://github.com/sameera474/Car-Rental-App---update-3.git",
+    live: "https://car-rental-app-update-31.vercel.app/",
   },
   {
     title: "Lawnmower Project",
@@ -64,10 +41,42 @@ const projects = [
     live: "https://lawnmower-project-final.vercel.app/",
   },
   {
-    title: "Car Rental Application",
-    img: project8,
-    github: "https://github.com/sameera474/Car-Rental-App---update-3.git",
-    live: "https://car-rental-app-update-31.vercel.app/",
+    title: "E-commerce Project",
+    img: project6,
+    github: "https://github.com/sameera474/E-commerce-Web-Site",
+    live: "#",
+  },
+  {
+    title: "Student Portal for Tuition Class",
+    img: project5,
+    github: "https://github.com/sameera474/the_hub-add-php",
+    live: "#",
+  },
+
+  {
+    title: "Figma Mobile App (UI/UX Designs)",
+    img: project4,
+    github:
+      "https://www.figma.com/design/LClhp5XqdZn9dHygwGVMIi/W-1-App-Updated?node-id=0-1&t=OCw1dKXHbCdVy9Ya-1",
+    live: "https://www.figma.com/proto/LClhp5XqdZn9dHygwGVMIi/W-1-App-Updated?node-id=1-3&p=f&t=AcLtfCD1czwC6OKJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3",
+  },
+  {
+    title: "Weather Dashboard Application",
+    img: project3,
+    github: "https://github.com/sameera474/Weather-Dashboard-Application",
+    live: "https://sameera474.github.io/Weather-Dashboard-Application/",
+  },
+  {
+    title: "Wacky Tales Weaver",
+    img: project2,
+    github: "https://github.com/sameera474/Whacky-Story-Weaver.git",
+    live: "https://sameera474.github.io/Whacky-Story-Weaver/",
+  },
+  {
+    title: "Memory Game",
+    img: project1,
+    github: "https://github.com/sameera474/Game-Project.git",
+    live: "https://sameera474.github.io/Game-Project/",
   },
 ];
 
