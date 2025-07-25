@@ -27,10 +27,15 @@ export default function Experience() {
   const frontendSkills = [
     { name: "HTML", rating: 5 },
     { name: "CSS", rating: 5 },
+    { name: "Figma", rating: 5 },
     { name: "JavaScript", rating: 5 },
     { name: "TypeScript", rating: 5 },
     { name: "Next.js", rating: 5 },
-    { name: "Node.js", rating: 5 },
+    { name: "SCSS", rating: 5 },
+    { name: "Bootstrap", rating: 5 },
+    { name: "Tailwind CSS", rating: 5 },
+    { name: "Material-UI", rating: 5 },
+    { name: "Styled Components", rating: 5 },
     { name: "React.js", rating: 5 },
   ];
 
@@ -43,6 +48,10 @@ export default function Experience() {
     { name: "Git", rating: 5 },
     { name: "GitHub", rating: 5 },
     { name: "GitLab", rating: 5 },
+    { name: "REST APIs", rating: 5 },
+    { name: "GraphQL", rating: 5 },
+    { name: "WebSockets", rating: 5 },
+    { name: "Docker", rating: 5 },
   ];
 
   // Function to render star ratings
@@ -171,7 +180,7 @@ export default function Experience() {
           </Typography>
           <Grid container spacing={3} justifyContent="center">
             <Grid item xs={6} md={4}>
-              <Typography variant="h3">2</Typography>
+              <Typography variant="h3">3</Typography>
               <Typography>Years of Experience</Typography>
             </Grid>
             <Grid item xs={6} md={4}>
