@@ -69,7 +69,7 @@ export default function Home({ darkMode }) {
               fontSize: { xs: "14px", sm: "16px", md: "18px" },
             }}
           >
-            Full-Stack Web Developer
+            Full-Stack Web Developer and UI/UX Designer
           </Typography>
           <Typography
             variant="h2"
