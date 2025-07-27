@@ -52,7 +52,7 @@ const projects = [
     title: "E-commerce Project",
     img: project6,
     github: "https://github.com/sameera474/E-commerce-Web-Site",
-    live: "#",
+    live: "https://e-commerce-web-site-lyart.vercel.app/",
   },
   {
     title: "Student Portal for Tuition Class",
