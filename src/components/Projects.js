@@ -19,8 +19,16 @@ import project6 from "../assets/images/project-6.png";
 import project7 from "../assets/images/project-7.png";
 import project8 from "../assets/images/project-8.png";
 import project9 from "../assets/images/project-9.png";
+import project10 from "../assets/images/project-10.png";
 
 const projects = [
+  {
+    title: "Figma Constrction Dashboard UI Design",
+    img: project10,
+    github:
+      "https://www.figma.com/design/9vPkp1vMkDLFnqkQWosGYj/Construction-Dashboard?node-id=0-1&p=f&t=lor6EadmViKtohYX-0",
+    live: "https://www.figma.com/proto/9vPkp1vMkDLFnqkQWosGYj/Construction-Dashboard?node-id=2-18521&p=f&t=lor6EadmViKtohYX-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+  },
   {
     title: "Figma Web Site UI Design",
     img: project9,
