@@ -138,7 +138,7 @@ export default function Projects() {
                       },
                     })}
                   >
-                    GitHub
+                    GitHub/Source
                   </Button>
 
                   {project.live !== "#" && (
